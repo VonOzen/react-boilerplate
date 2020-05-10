@@ -1,0 +1,57 @@
+@charset 'UTF-8';
+
+// Necessary tools (needed in config)
+// ----------------
+// CSS Reset
+@import '01_tools/css-reset';
+// Em converter
+// @import '01_tools/em-converter';
+// Rem converter
+// @import '01_tools/rem-converter';
+// Mixins
+@import '01_tools/mixins';
+
+// Theme config
+// ------------
+// Global, variables, config elements
+@import '00_config/variables-colors';
+@import '00_config/variables-layout';
+@import '00_config/mediaqueries';
+@import '00_config/webfonts';
+
+// Tools, snippets (config needed)
+// ---------------
+// Defaults mixin and functions, fonts and icons utilities
+@import '01_tools/snippets';
+// @import '01_tools/expand';
+
+// -------------------------------//
+// ATOMIC DESIGN FILES STRUCTURE  //
+// -------------------------------//
+// Learn more on : http://bradfrost.com/blog/post/atomic-web-design/
+// -------------------------------//
+// Atoms
+// -----
+// Single elements, html tags
+@import '02_atoms/**/*';
+
+// Molecules
+// ---------
+// Atoms combined
+@import '03_components/**/*';
+
+// Organisms
+// ---------
+// Molecules combined / Building blocks and structures with molecules
+@import '04_organisms/**/*';
+
+// Layout
+// ------
+// Templates / Layout specific themes (header, footer…)
+@import '05_layout/**/*';
+
+// Overrides
+// ---------
+// Overrides, specific styles for special pages or contexte
+// (should be empty, it's a last resort folder !)
+@import '06_overrides/**/*';

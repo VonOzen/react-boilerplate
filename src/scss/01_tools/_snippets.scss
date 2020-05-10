@@ -1,0 +1,263 @@
+// Tools : Snippets
+// ================
+//
+
+// Accessibilité
+// -------------
+// Masquer le contenu de façon accessible :
+%u-srOnly {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+.u-srOnly {
+  @extend %u-srOnly;
+}
+
+.u-srOnlyMd {
+  @include media-breakpoint-up('md') {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+  }
+}
+
+.u-srOnlyXs {
+  @include media-breakpoint-down('xs') {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+  }
+}
+
+.u-hide {
+  display: none;
+}
+
+@include media-breakpoint-up('l') {
+  .u-hideL {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-up('md') {
+  .u-hideMd {
+    display: none !important;
+  }
+}
+
+@include media-breakpoint-down('xs') {
+  .u-hideXs {
+    display: none !important;
+  }
+}
+
+// No JS
+@mixin no-js {
+  .#{$class-no-js} & {
+    @content;
+  }
+}
+
+// // Classes utilitaires, shortcuts
+// // ------------------------------
+// // Clearfix
+// .u-clearfix { clear: both; }
+// // Nowrap
+// .u-nowrap { white-space: nowrap; }
+// // Text-align
+// .u-textRight { text-align: right !important; }
+// .u-textLeft { text-align: left !important; }
+// .u-textCenter { text-align: center !important; }
+// // Text style
+// .u-textUpper { text-transform: uppercase; }
+// .u-textItalic { font-style: italic; }
+// // Text weight
+// // .u-text-bold { @extend %webfont-bold; }
+// .u-textBlack { @extend %webfont-black; }
+// .u-textRegular { @extend %webfont; }
+
+// // Colors
+// .u-textWhite { color: $white; }
+// .u-textTabasco { color: $tabasco; }
+// .u-textBlueChill { color: $blue-chill; }
+
+// // Font size
+// .u-fsSmall { font-size: rem(14px); }
+// .u-fsMedium { font-size: rem(20px); }
+// .u-fsBig { font-size: rem(30px); }
+
+// // Layout
+// // ---------
+// .u-dInline {
+//   display: inline !important;
+// }
+
+// .u-dBlock {
+//   display: block;
+// }
+
+// .u-dFlex {
+//   display: flex;
+// }
+
+// .u-fdCol {
+//   flex-direction: column;
+// }
+
+// .u-flexShrink0 {
+//   flex-shrink: 0;
+// }
+
+// .u-flexWrap {
+//   flex-wrap: wrap;
+// }
+
+// .u-center {
+//   margin: auto;
+// }
+
+// .u-mbSmall {
+//   margin-bottom: rem(20px);
+// }
+
+// .u-mbMedium {
+//   margin-bottom: rem(40px);
+// }
+
+// .u-mtSmall {
+//   margin-top: rem(20px);
+// }
+
+// .u-mtMedium {
+//   margin-top: rem(40px);
+// }
+
+// .u-spaceBtw {
+//   justify-content: space-between;
+// }
+
+// .u-justifyEnd {
+//   justify-content: flex-end !important;
+// }
+
+// .u-alignCenter {
+//   align-items: center;
+// }
+
+// .u-alignEnd {
+//   align-items: flex-end;
+// }
+
+// .u-alignSelfStart {
+//   align-self: flex-start;
+// }
+
+
+// .u-constrained {
+//   width: 100%;
+//   max-width: $restrained-width !important;
+// }
+
+// .u-constrainedSmall {
+//   width: 100%;
+//   max-width: $restrainedSmall-width !important;
+// }
+
+// .u-constrainedXSmall {
+//   width: 100%;
+//   max-width: $restrainedXSmall-width !important;
+// }
+
+// .u-rowLayout {
+//   display: flex;
+//   flex-direction: column;
+
+//   @include media-breakpoint-up('md') {
+//     flex-direction: row;
+//   }
+// }
+
+// .u-reverseRow {
+//   flex-direction: column-reverse;
+
+//   @include media-breakpoint-up('md') {
+//     flex-direction: row-reverse;
+//   }
+// }
+
+// .u-colLayout {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .u-reverseCol {
+//   flex-direction: column-reverse;
+// }
+
+// .u-colMain {
+//   @include media-breakpoint-up('md') {
+//     flex-grow: 1;
+//     flex-shrink: 1;
+//   }
+// }
+
+// %u-col {
+//   margin-top: rem(20px);
+
+//   @include media-breakpoint-up('md') {
+//     flex-shrink: 0;
+//     margin-top: 0;
+//     margin-left: rem(20px);
+
+//     .u-reverseRow & {
+//       margin-right: rem(20px);
+//     }
+//   }
+// }
+
+// .u-colSmall {
+//   @extend %u-col;
+
+//   @include media-breakpoint-up('md') {
+//     flex-basis: rem(280px);
+//   }
+// }
+
+// .u-colMedium {
+//   @extend %u-col;
+
+//   @include media-breakpoint-up('md') {
+//     flex-basis: rem(340px);
+//   }
+// }
+
+// .u-colLarge {
+//   @extend %u-col;
+
+//   @include media-breakpoint-up('md') {
+//     flex-basis: rem(500px);
+//   }
+// }
+
+// .u-colOffset {
+//   @include media-breakpoint-up('md') {
+//     margin-top: rem(-240px) !important;
+//   }
+// }

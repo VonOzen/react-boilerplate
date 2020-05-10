@@ -1,0 +1,98 @@
+// Tools : Mixins
+// ==============
+//
+
+// stylelint-disable
+
+// User select
+// ---------------------------------
+// Permettre ou non la sélection de l'élément
+// Permet d'empêcher les boutons ou images d'être copiées avec le contenu
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select; // IE10+
+  -o-user-select: $select;
+  user-select: $select;
+}
+
+// Text overflow
+// ---------------------------------
+// Afficher des points de suspensions
+// quand le texte déborde du conteneur
+@mixin text-overflow() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Placeholders
+// ---------------------------------
+// Mixin pour styler des placeholders (à insérer au niveau des inputs)
+
+// Couleur des placeholders :
+@mixin placeholder-color($color, $font-weight: 'normal') {
+  &:-moz-placeholder {
+    font-weight: $font-weight;
+    color: $color;
+  }
+  &::-moz-placeholder {
+    font-weight: $font-weight;
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    font-weight: $font-weight;
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    font-weight: $font-weight;
+    color: $color;
+  }
+}
+
+// Typo des placeholders :
+@mixin placeholder-font($font-family) {
+  &:-moz-placeholder {
+    font-family: $font-family;
+  }
+  &::-moz-placeholder {
+    font-family: $font-family;
+  }
+  &:-ms-input-placeholder {
+    font-family: $font-family;
+  }
+  &::-webkit-input-placeholder {
+    font-family: $font-family;
+  }
+}
+
+// Typo des placeholders :
+@mixin input-placeholder {
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin appearance ($value) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  appearance: $value;
+}
+
+@mixin btn-reset {
+  @include appearance(none);
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+  background: none;
+  border: 0;
+}

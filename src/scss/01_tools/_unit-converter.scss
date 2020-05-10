@@ -1,0 +1,76 @@
+// Tools : Rem converter
+// =====================
+//
+// Styles dédiés pour les navigateurs modernes */
+
+/////
+/// A #sass function to convert pixel font-sizes to em's.
+///
+/// @author Mehdi Kabab
+////
+
+$ppm-base-fontSize: 16px !default;
+$ppm-base-rootFontSize: 10px !default;
+
+/// Convertir l'unité en px $to en unité relative em par rapport
+/// à la taille en pixel du $context courant.
+/// @url https://gist.github.com/piouPiouM/5756376
+@function em($to, $context: $ppm-base-fontSize) {
+  // Préserver la valeur spéciale nulle.
+  @if ('null' == type-of($context)) {
+    $context: $base-fontSize;
+  }
+  @if ('null' == type-of($to)) {
+    @return null;
+  }
+  @else if ('list' == type-of($to)) {
+    $tmp: ();
+    @each $value in $to {
+      $tmp: append($tmp, em($value, $context));
+    }
+
+    @return $tmp;
+  }
+  @else if unitless($to) {
+    $to: $to * 1px;
+  }
+
+  // Éviter une erreur de syntaxe en l'absence d'unité sur l'un des
+  // deux arguments.
+  @if unitless($context) { $context: $context * 1px; }
+
+  // Le résultat de la division de composants d'une même unité
+  // retourne une valeur dépourvue d'unité. Il suffit alors d'ajouter
+  // 0em pour réaliser la conversion ou de multiplier le résultat par 1em
+  // (solution à privilégier pour contourner la règle `length-zero-no-unit` de stylelint.
+  @return $to / $context * 1em;
+}
+
+
+@function rem($to, $context: $ppm-base-rootFontSize) {
+  // Préserver la valeur spéciale nulle.
+  @if ('null' == type-of($context)) {
+    $context: $base-fontSize;
+  }
+  @if ('null' == type-of($to)) {
+    @return null;
+  }
+  @else if ('list' == type-of($to)) {
+    $tmp: ();
+    @each $value in $to {
+      $tmp: append($tmp, rem($value, $context));
+    }
+
+    @return $tmp;
+  }
+  @else if ('px' != unit($to)) {
+    @return $to;
+  }
+
+  @return ppm-strip-unit($to) / ppm-strip-unit($context) * 1rem;
+}
+
+@function ppm-strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+

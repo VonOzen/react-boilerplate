@@ -1,0 +1,106 @@
+// Config : Webfonts
+// =================
+// Fonts import, placeholders
+
+@font-face {
+  font-family: 'Muli';
+  font-display: swap;
+  font-weight: 200;
+  font-style: normal;
+  src: local('Muli ExtraLight'), local('Muli-ExtraLight'),
+    url('#{$assets-url}fonts/muli/Muli-ExtraLight.woff2') format('woff2'),
+    url('#{$assets-url}fonts/muli/Muli-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+  src: local('Muli Light'), local('Muli-Light'),
+    url('#{$assets-url}fonts/muli/Muli-Light.woff2') format('woff2'),
+    url('#{$assets-url}fonts/muli/Muli-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: local('Muli Regular'), local('Muli-Regular'),
+    url('#{$assets-url}fonts/muli/Muli-Regular.woff2') format('woff2'),
+    url('#{$assets-url}fonts/muli/Muli-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+  src: local('Muli SemiBold'), local('Muli-SemiBold'),
+    url('#{$assets-url}fonts/muli/Muli-SemiBold.woff2') format('woff2'),
+    url('#{$assets-url}fonts/muli/Muli-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src: local('Muli Bold'), local('Muli-Bold'),
+    url('#{$assets-url}fonts/muli/Muli-Bold.woff2') format('woff2'),
+    url('#{$assets-url}fonts/muli/Muli-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NotoSansTC';
+  font-display: swap;
+  font-weight: 200;
+  font-style: normal;
+  src: local('NotoSansTC Thin'), local('NotoSansTC-Thin'),
+    url('#{$assets-url}fonts/notosanstc/NotoSansTC-Thin.woff2') format('woff2'),
+    url('#{$assets-url}fonts/notosanstc/NotoSansTC-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NotoSansTC';
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+  src: local('NotoSansTC Light'), local('NotoSansTC-Light'),
+    url('#{$assets-url}fonts/notosanstc/NotoSansTC-Light.woff2') format('woff2'),
+    url('#{$assets-url}fonts/notosanstc/NotoSansTC-Light.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'NotoSansTC';
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: local('NotoSansTC Regular'), local('NotoSansTC-Regular'),
+    url('#{$assets-url}fonts/notosanstc/NotoSansTC-Regular.woff2') format('woff2'),
+    url('#{$assets-url}fonts/notosanstc/NotoSansTC-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NotoSansTC';
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src: local('NotoSansTC Bold'), local('NotoSansTC-Bold'),
+    url('#{$assets-url}fonts/notosanstc/NotoSansTC-Bold.woff2') format('woff2'),
+    url('#{$assets-url}fonts/notosanstc/NotoSansTC-Bold.woff') format('woff');
+}
+
+
+
+@font-face {
+  font-family: 'Sarabun';
+  font-display: swap;
+  font-weight: 800;
+  font-style: normal;
+  src: local('Sarabun ExtraBold'), local('Sarabun-ExtraBold'),
+    url('#{$assets-url}fonts/sarabun/Sarabun-ExtraBold.woff2') format('woff2'),
+    url('#{$assets-url}fonts/sarabun/Sarabun-ExtraBold.woff') format('woff');
+}

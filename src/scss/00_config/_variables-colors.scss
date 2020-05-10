@@ -1,0 +1,48 @@
+// Config : Colors variables
+// =========================
+//
+
+// Debug
+// ------
+// background color debugging ftw
+/* stylelint-disable */
+$p: peachpuff !default;
+$r: rebeccapurple !default;
+$l: lightgreen !default;
+/* stylelint-enable */
+
+// Colors list
+// -----------
+// List all colors right here
+// Variables named using "Name that color" (http://chir.ag/projects/name-that-color/)
+$white: #fff !default;
+$black: #000 !default;
+
+// Grey variants
+$alabaster: #faf9f9 !default;
+$ebb: #f4f2f1 !default;
+$ebb-darken: #edebea !default;
+$ebb-darker: #e9e6e3 !default;
+$timberwolf: #d5d2ce !default;
+$cloud: #cac9c7 !default;
+$silver: #c6c6c6 !default;
+
+// Client validated colors :
+$elm: #1b6364 !default;
+$sherpa-blue: #005455 !default;
+$sherpa-blue-darken: #004b4c !default;
+$teal: #007e7f !default;
+
+$amaranth: #ef3846 !default;
+
+// Message colors
+$alert: #d30000 !default;
+$valid: #309f1e !default;
+
+
+// Layout color
+// ------------
+// Put the colors listed in use
+// /!\ Don't use color name for your variables here
+$body-bg: $white;
+$text-color: $black;

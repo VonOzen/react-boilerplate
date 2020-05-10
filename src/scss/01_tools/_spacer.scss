@@ -1,0 +1,47 @@
+@each $spacer, $sizes in $global-spacers {
+  @each $breakpoint in map-keys($global-grid-breakpoints) {
+    @if map-has-key($sizes, $breakpoint) {
+      @include media-breakpoint-up($breakpoint) {
+        %u-spacerBottom#{$spacer},
+        .u-spacerBottom#{$spacer} {
+          margin-bottom: rem(map-get($sizes, $breakpoint));
+        }
+
+        %u-spacerTop#{$spacer},
+        .u-spacerTop#{$spacer} {
+          margin-top: rem(map-get($sizes, $breakpoint));
+        }
+
+        %u-spacer#{$spacer},
+        .u-spacer#{$spacer} {
+          margin-top: rem(map-get($sizes, $breakpoint));
+          margin-bottom: rem(map-get($sizes, $breakpoint));
+        }
+      }
+    }
+  }
+}
+
+@each $spacer, $sizes in $global-innerSpacers {
+  @each $breakpoint in map-keys($global-grid-breakpoints) {
+    @if map-has-key($sizes, $breakpoint) {
+      @include media-breakpoint-up($breakpoint) {
+        %u-spacerInnerBottom#{$spacer},
+        .u-spacerInnerBottom#{$spacer} {
+          padding-bottom: rem(map-get($sizes, $breakpoint));
+        }
+
+        %u-spacerInnerTop#{$spacer},
+        .u-spacerInnerTop#{$spacer} {
+          padding-top: rem(map-get($sizes, $breakpoint));
+        }
+
+        %u-spacerInner#{$spacer},
+        .u-spacerInner#{$spacer} {
+          padding-top: rem(map-get($sizes, $breakpoint));
+          padding-bottom: rem(map-get($sizes, $breakpoint));
+        }
+      }
+    }
+  }
+}

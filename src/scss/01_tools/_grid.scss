@@ -1,0 +1,6 @@
+@function get-grid-width($nbCol, $breakpoint) {
+  $colSize: map-get($grid-col, $breakpoint);
+  $gridSize: map-get($grid-gutter, $breakpoint);
+
+  @return $colSize * $nbCol + $gridSize * ($nbCol - 1);
+}

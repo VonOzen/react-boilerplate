@@ -1,0 +1,72 @@
+////
+/// @author Mehdi Kabab
+/// @url https://gist.github.com/piouPiouM/7428ca19e498677c519121492e8e584f
+////
+
+/// Converts strings to UpperCamelCase.
+/// If the parameter `$first_letter` is set to `lower` then the function
+/// produces lowerCamelCase.
+///
+/// @param {String} $string - The string to camelize.
+/// @param {String} $first_letter ['upper'] - Set to `'lower'` to produces lowerCamelCase.
+///
+/// @return {String}
+///   Returns a string camelized in UpperCamelCase or lowerCamelCase according
+///   the `$first_letter` parameter.
+@function ppm-string-camelize($string, $first_letter: 'upper') {
+  $separators: ('-', '_', ' ');
+
+  @each $separator in $separators {
+    $dash: str-index($string, $separator);
+    @if 'number' == type-of($dash) {
+      $prefix: str-slice($string, 1, $dash - 1);
+      $uppercase: to-upper-case(str-slice($string, $dash + 1, $dash + 1));
+      $suffix: str-slice($string, $dash + 2);
+      $string: ppm-string-camelize($prefix + $uppercase + $suffix);
+    }
+  }
+
+  $case-cb: 'to-lower-case';
+  @if 'upper' == $first_letter {
+    $case-cb: 'to-upper-case';
+  }
+  $string: call(get-function($case_cb), str-slice($string, 1, 1)) + str_slice($string, 2);
+
+  @return $string;
+}
+
+/// Converts strings to Capitalize.
+///
+/// @param {String} $string - The string to capitalize.
+///
+/// @return {String}
+///   Returns a copy of `$string` with the first character converted to uppercase
+///   and the remainder to lowercase.
+@function ppm-string-capitalize($string) {
+  @return to-upper-case(str-slice($string, 1, 1)) + to-lower-case(str-slice($string, 2));
+}
+
+/// Join list elements with a string.
+///
+/// @example scss
+///   ppm-string-implode(('background', 'color'), '-')
+///   // background-color
+///
+/// @param {List} $list
+///   The list of strings to implode.
+/// @param {String} $glue
+///   The glue string. Defaults to an empty string.
+///
+/// @return {String}
+///   Returns a string containing a string representation of all
+///   the list elements in the same order, with the glue string
+///   between each element.
+@function ppm-string-implode($list, $glue: '') {
+  $string: '';
+  @each $item in $list {
+    $string: $string + $glue + $item;
+  }
+
+  @return str-slice($string, str-length($glue) + 1);
+}
+

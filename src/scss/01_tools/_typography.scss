@@ -1,0 +1,179 @@
+////
+/// Collection of typography tools.
+////
+
+/// Enable or disable font smoothing.
+///
+/// @param {String} $state 'on' - Enable font smoothing with 'on'.
+@mixin font-smoothing($value: 'on') {
+  @if $value == 'on' {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+@mixin editorial-content($selector: $rtfSelector) {
+  #{$rtfSelector} {
+    @content;
+  }
+}
+
+
+$muli-extraLight: 200 !default;
+$muli-light: 300 !default;
+$muli-regular: 400 !default;
+$muli-semiBold: 600 !default;
+$muli-bold: 700 !default;
+
+$notosans-thin: 200 !default;
+$notosans-light: 300 !default;
+$notosans-regular: 400 !default;
+$notosans-bold: 700 !default;
+
+$sarabun-extrabold: 800 !default;
+
+%u-fontSmoothing {
+  @include font-smoothing('on');
+}
+
+%u-fontNoSmoothing {
+  @include font-smoothing('off');
+}
+
+%u-fontExtraLight {
+  font-weight: $muli-extraLight;
+}
+
+%u-fontLight {
+  font-weight: $muli-light;
+}
+
+%u-fontRegular {
+  font-weight: $muli-regular;
+}
+
+%u-fontBold {
+  font-weight: $muli-bold;
+}
+
+%u-fontSemiBold {
+  font-weight: $muli-semiBold;
+}
+
+%u-headingFontThin {
+  font-family: $secondary-fontFamily;
+  font-weight: $notosans-thin;
+}
+
+%u-headingFontLight {
+  font-family: $secondary-fontFamily;
+  font-weight: $notosans-light;
+}
+
+%u-headingFontRegular {
+  font-family: $secondary-fontFamily;
+  font-weight: $notosans-regular;
+}
+
+%u-headingFontBold {
+  font-family: $secondary-fontFamily;
+  font-weight: $notosans-bold;
+}
+
+%u-filigraneFontExtraBold {
+  font-family: $ternary-fontFamily;
+  font-weight: $sarabun-extrabold;
+}
+
+%u-fontResetWeight {
+  font-weight: inherit !important;
+  font-weight: unset !important;
+}
+
+.u-fontExtraLight {
+  @extend %u-fontExtraLight !optional;
+}
+
+.u-fontLight {
+  @extend %u-fontLight !optional;
+
+  b,
+  strong {
+    @extend %u-fontBold !optional;
+  }
+}
+
+.u-fontRegular {
+  @extend %u-fontRegular !optional;
+}
+
+.u-fontSemiBold {
+  @extend %u-fontSemiBold !optional;
+
+  b,
+  strong {
+    @extend %u-fontBold !optional;
+  }
+}
+
+.u-fontBold {
+  @extend %u-fontBold !optional;
+
+  b,
+  strong {
+    @extend %u-fontExtraBold !optional;
+  }
+}
+
+
+.u-headingFontThin {
+  @extend %u-headingFontThin;
+
+  b,
+  strong {
+    @extend %u-headingFontRegular !optional;
+  }
+}
+
+.u-headingFontLight {
+  @extend %u-headingFontLight;
+
+  b,
+  strong {
+    @extend %u-headingFontRegular !optional;
+  }
+}
+
+.u-headingFontRegular {
+  @extend %u-headingFontRegular;
+  
+  b,
+  strong {
+    @extend %u-headingFontBold !optional;
+  }
+}
+
+.u-headingFontBold {
+  @extend %u-headingFontBold;
+
+  b,
+  strong {
+    @extend %u-headingFontBold !optional;
+  }
+}
+
+.u-headingFontBold {
+  @extend %u-headingFontBold;
+}
+
+.u-filigraneFontExtraBold {
+  @extend %u-filigraneFontExtraBold;
+}
+
+.u-fontResetWeight {
+  @extend %u-fontResetWeight !optional;
+}

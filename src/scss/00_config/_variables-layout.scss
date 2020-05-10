@@ -1,0 +1,101 @@
+// Config : Layout variables
+// =========================
+//
+
+// Global config
+// -------------
+$class-prefix: miw !default;
+$assets-url: '/assets/';
+$transition: 0.3s !default;
+// Sélecteur qui indique que le contenu est riche/contribué et non un élément de design.
+$rtfSelector: '.u-isRtf' !default;
+$class-noJs: '.no-js' !default;
+
+// Typography
+// ----------
+// Base
+$root-fontSize: 62.5% !default;
+
+$global-fontFamily: Muli, Helvetica, Arial, 'Trebuchet MS', sans-serif !default;
+$global-fontWeightBase: 200 !default;
+
+$secondary-fontFamily: NotoSansTC, Muli, Helvetica, Arial, 'Trebuchet MS', sans-serif !default;
+$ternary-fontFamily: Sarabun, Muli, Helvetica, Arial, 'Trebuchet MS', sans-serif !default;
+
+// font-size line-height
+$global-fontSizes: (
+  xs: ('font-size': 14px, 'line-height': 20px),
+  md: ('font-size': 16px, 'line-height': 22px),
+) !default;
+
+
+
+// Layout variables
+// ----------------
+$site-width: rem(1400px) !default;
+$site-inner-width: rem(1200px) !default;
+$site-inner-small-width: rem(900px) !default;
+
+// Grid
+$nb-cols: 14 !default;
+
+$colSize: rem(100px);
+
+$grid-col: (
+  xs: rem(40px),
+  md: rem(50px),
+) !default;
+
+$grid-gutter: (
+  xs: rem(30px),
+  md: rem(50px),
+) !default;
+
+
+// ### Grid breakpoints
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$page-padding: (
+  xs: rem(15px),
+  md: rem(50px),
+) !default;
+
+$global-grid-breakpoints: (
+  xs: 0,
+  md: 769px,
+  l: 1025px,
+  xl: 1300px,
+) !default;
+//
+$section-padding: (
+  xs: rem(30px),
+  md: rem(30px),
+) !default;
+
+//
+// ## Spacers
+//
+$global-spacers: (
+  'Regular': (xs: 30px, md: 120px),
+) !default;
+
+$global-innerSpacers: (
+  // 'XSmall': (xs: 10px, md: 20px),
+  // 'Small': (xs: 20px, md: 25px),
+  // 'Medium': (xs: 40px, md: 60px),
+  // 'Large':  (xs: 50px, md: 85px),
+  // 'Xlarge': (xs: 50px, md: 100px),
+) !default;
+
+
+// Header
+$header-height: 55px !default;
+$liseret-height: 5px !default;
+
+
+// Z-index directory
+// ------------------
+// Ranked in order of importance
+$zindex-header: 4 !default;
+$zindex-nav: 3 !default;
+$zindex-content: 1 !default;
